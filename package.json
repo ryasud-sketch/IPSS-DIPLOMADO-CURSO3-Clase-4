@@ -1,0 +1,25 @@
+{
+  "name": "ipss-diplomado-clase-4",
+  "version": "1.0.0",
+  "description": "Clase 4 — Autenticación (JWT + bcrypt) y subida de archivos.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently -n api,front -c cyan,magenta \"node --watch start/server.js\" \"vite --config vite.config.js\"",
+    "dev:final": "concurrently -n api,front -c cyan,magenta \"node --watch final/server.js\" \"vite --config vite.final.config.js\""
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "express": "^4.22.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.4",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.3",
+    "concurrently": "^10.0.3",
+    "vite": "^8.1.4"
+  }
+}

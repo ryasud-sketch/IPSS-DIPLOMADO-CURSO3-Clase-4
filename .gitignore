@@ -1,0 +1,12 @@
+node_modules/
+
+# Nunca subir la URL de conexión a MongoDB: da acceso completo a la base.
+.env
+.env.local
+
+dist/
+.DS_Store
+
+# Las soluciones (final/) NO se publican: solo los ejercicios (start/).
+# Se quedan en la máquina del profesor como referencia.
+final/
