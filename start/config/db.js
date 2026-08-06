@@ -1,12 +1,18 @@
 import mongoose from 'mongoose'
+import dotenv from 'dotenv'
 
 // ---------------------------------------------------------------------------
 // CAPA CONFIG — conexión a Mongo.
 // ---------------------------------------------------------------------------
 
-// ⚠️ SÓLO PARA LA CLASE. En un proyecto real va en un .env (tarea de la clase 2).
-const MONGODB_URI =
-  'mongodb+srv://usuario:contraseña@cluster.mongodb.net/clinica?retryWrites=true&w=majority'
+dotenv.config()
+
+const MONGODB_URI = process.env.MONGODB_URI?.trim()
+if (!MONGODB_URI) {
+  throw new Error(
+    'MONGODB_URI no está definido. Copia .env.example a .env y configura tu URI de MongoDB.'
+  )
+}
 
 export const conectar = async () => {
   await mongoose.connect(MONGODB_URI)
