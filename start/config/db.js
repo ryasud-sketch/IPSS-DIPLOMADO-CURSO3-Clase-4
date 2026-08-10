@@ -7,7 +7,7 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const MONGODB_URI = process.env.MONGODB_URI?.trim()
+const MONGODB_URI = 'mongodb+srv://ryasud_db_user:Guachi3597@cluster0.tevi5qi.mongodb.net/?appName=Cluster0'
 if (!MONGODB_URI) {
   throw new Error(
     'MONGODB_URI no está definido. Copia .env.example a .env y configura tu URI de MongoDB.'
