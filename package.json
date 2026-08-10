@@ -16,11 +16,22 @@
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.9.1",
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.7",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.3",
     "concurrently": "^10.0.3",
     "vite": "^8.1.4"
-  }
+  },
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryasud-sketch/IPSS-DIPLOMADO-CURSO3-Clase-4.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/ryasud-sketch/IPSS-DIPLOMADO-CURSO3-Clase-4/issues"
+  },
+  "homepage": "https://github.com/ryasud-sketch/IPSS-DIPLOMADO-CURSO3-Clase-4#readme"
 }
