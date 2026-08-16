@@ -1,11 +1,12 @@
 import mongoose from 'mongoose'
 // Para el hash de la contraseña usaremos bcrypt:
-// import bcrypt from 'bcryptjs'
+ import bcrypt from 'bcryptjs'
 
 // ---------------------------------------------------------------------------
 // CAPA MODELS — el Médico. Además de sus datos, es el USUARIO que inicia sesión:
 // tiene email y password. La password NUNCA se guarda en texto plano.
 // ---------------------------------------------------------------------------
+
 
 const medicoSchema = new mongoose.Schema(
   {
@@ -17,6 +18,22 @@ const medicoSchema = new mongoose.Schema(
   { timestamps: true },
 )
 
+medicoSchema.pre('save', async function () {
+  if (!this.isModified('password')) return
+
+  this.password = await bcrypt.hash(this.password, 10)
+})
+
+medicoSchema.methods.compararPassword = function (passwordPlano) {
+  return bcrypt.compare(passwordPlano, this.password)
+}
+
+// al convertir a JSON quitamos la password
+medicoSchema.methods.toJSON = function () {
+  const medico = this.toObject()
+  delete medico.password
+  return medico
+}
 // ---------------------------------------------------------------------------
 // TODO — proteger la contraseña:
 //   1. Hook pre('save') que hashea la password con bcrypt ANTES de guardar

@@ -9,7 +9,8 @@ let token = localStorage.getItem('token') || null
 
 // Helper: hace fetch, agrega el token si lo hay, y maneja la respuesta.
 const pedir = async (ruta, opciones = {}) => {
-  const headers = { 'Content-Type': 'application/json', ...opciones.headers }
+  const headers = { ...opciones.headers }
+  if (opciones.body !== undefined) headers['Content-Type'] = 'application/json'
   if (token) headers.Authorization = `Bearer ${token}`
 
   const res = await fetch(BASE + ruta, { ...opciones, headers })

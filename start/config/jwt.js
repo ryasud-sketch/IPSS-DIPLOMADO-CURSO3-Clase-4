@@ -6,3 +6,4 @@
 
 export const JWT_SECRET = 'clave-secreta-de-la-clase-4' // ⚠️ SÓLO PARA LA CLASE
 export const JWT_EXPIRA = '2h' // el token vence en 2 horas
+

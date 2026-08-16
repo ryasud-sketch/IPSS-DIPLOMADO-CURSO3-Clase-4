@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 // CAPA MODELS — el Paciente. Datos básicos, sin credenciales.
 // ---------------------------------------------------------------------------
 
+
 const pacienteSchema = new mongoose.Schema(
   {
     nombre: { type: String, required: true, trim: true },
